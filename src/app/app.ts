@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class App {
   messageList: string[] = [];
   protected readonly title = signal('Angullama');
+
   submit(_msg: string): void {
     this.messageList.push(_msg);
   }
