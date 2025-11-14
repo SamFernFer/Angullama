@@ -32,6 +32,14 @@
       overflow: auto;
       border: 2px solid blue
     }
+    .timestamp {
+      text-align: right;
+      margin-top: 0px;
+      margin-left: auto;
+      margin-right: 0px;
+      width: 100%;
+      /* display: block; */
+    }
   </style>
 </head>
 <body>
@@ -47,7 +55,9 @@
   <div id="message-box">
     @for(message of messageList; track $index) {
       <div class="message">
-        <code><h3>User: </h3>{{message}}</code>
+        <code>User: </code>
+        <code class="timestamp">{{timestamp}}</code>
+        <div><code>{{message}}</code></div>
       </div>
     }
   </div>

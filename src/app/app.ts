@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
+  timestamp: string = "ERROR";
   messageList: string[] = [];
   protected readonly title = signal('Angullama');
 
@@ -17,6 +19,7 @@ export class App {
     this.pushMessageAndClear(_target);
   }
   pushMessageAndClear(area: HTMLTextAreaElement): void {
+    this.timestamp = Date.now().toString()/* formatDate(Date.now(), "YYYY-MM-DD", "en-us") */;
     this.messageList.push(area.value);
     area.value = '';
   }
