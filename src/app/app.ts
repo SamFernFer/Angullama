@@ -5,7 +5,8 @@ import { formatDate } from '@angular/common';
 
 interface ChatMessage {
   msg: string,
-  timestamp: string
+  timestamp: string,
+  id: number
 }
 
 @Component({
@@ -27,7 +28,8 @@ export class App {
     let _time: string = Date.now().toString()/* formatDate(Date.now(), "YYYY-MM-DD", "en-us") */;
     this.messageList.unshift({
       msg: area.value,
-      timestamp: _time
+      timestamp: _time,
+      id: this.messageList.length
     });
     area.value = '';
   }

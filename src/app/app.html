@@ -62,9 +62,9 @@
   </div>
   @if(messageList.length > 0) {
     <div id="message-box">
-      @for(message of messageList; track $index) {
+      @for(message of messageList; track message.id) {
         <div class="message index">
-          <code>{{"0".padStart(4, "0")}}</code>
+          <code>{{(message.id as string).padStart(4, "0")}}</code>
         </div>
         <div class="message">
           <code>User: </code>
