@@ -1,10 +1,19 @@
 <head>
   <style>
-    body {
+    #header {
       background-color: powderblue;
       border: 2px solid black;
       padding: 8px;
-      margin: 64px;
+      margin: 12px;
+      margin-bottom: 8px;
+    }
+    .message {
+      background-color: lightcoral;
+      border: 2px solid black;
+      padding: 8px;
+      margin: 12px;
+      margin-top: 8px;
+      margin-bottom: 8px;
     }
     h1 {
       color: blue;
@@ -12,18 +21,34 @@
     p {
       color: red;
     }
+    .submit-button {
+      margin: 8px
+    }
+    #message-box {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      flex: 0 0 0;
+      overflow: auto;
+      border: 2px solid blue
+    }
   </style>
 </head>
 <body>
-  <h1>Angullama</h1>
-  <p>Send your</p>
-  <p>message.</p>
-  <section>
-    <textarea id="msg-input" (keyup.enter)="submit($event)"></textarea>
-    <button (click)="pushMessageAndClear(getMsgInput())">Send</button>
-  </section>
-  @for(message of messageList; track $index) {
-    <hr>
-    <code><h3>User: </h3>{{message}}</code>
-  }
+  <div id="header">
+    <h1>Angullama</h1>
+    <p>Send your</p>
+    <p>message.</p>
+    <div>
+      <textarea id="msg-input" (keyup.enter)="submit($event)"></textarea>
+      <button class="submit-button" (click)="pushMessageAndClear(getMsgInput())">Send</button>
+    </div>
+  </div>
+  <div id="message-box">
+    @for(message of messageList; track $index) {
+      <div class="message">
+        <code><h3>User: </h3>{{message}}</code>
+      </div>
+    }
+  </div>
 </body>
