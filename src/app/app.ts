@@ -20,7 +20,7 @@ export class App {
   }
   pushMessageAndClear(area: HTMLTextAreaElement): void {
     this.timestamp = Date.now().toString()/* formatDate(Date.now(), "YYYY-MM-DD", "en-us") */;
-    this.messageList.push(area.value);
+    this.messageList.unshift(area.value);
     area.value = '';
   }
   getMsgInput(): HTMLTextAreaElement {

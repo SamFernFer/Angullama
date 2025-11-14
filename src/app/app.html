@@ -21,6 +21,9 @@
     p {
       color: red;
     }
+    #msg-input {
+      width: 100%;
+    }
     .submit-button {
       margin: 8px
     }
@@ -48,7 +51,7 @@
     <p>Send your</p>
     <p>message.</p>
     <div>
-      <textarea id="msg-input" (keyup.enter)="submit($event)"></textarea>
+      <textarea id="msg-input" rows="4" (keyup.enter)="submit($event)"></textarea>
       <button class="submit-button" (click)="pushMessageAndClear(getMsgInput())">Send</button>
     </div>
   </div>
