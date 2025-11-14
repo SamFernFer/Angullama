@@ -3,6 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { formatDate } from '@angular/common';
 
+interface ChatMessage {
+  msg: string,
+  timestamp: string
+}
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, FormsModule],
@@ -11,7 +16,7 @@ import { formatDate } from '@angular/common';
 })
 export class App {
   timestamp: string = "ERROR";
-  messageList: string[] = [];
+  messageList: ChatMessage[] = [];
   protected readonly title = signal('Angullama');
 
   submit(event: Event): void {
@@ -19,8 +24,11 @@ export class App {
     this.pushMessageAndClear(_target);
   }
   pushMessageAndClear(area: HTMLTextAreaElement): void {
-    this.timestamp = Date.now().toString()/* formatDate(Date.now(), "YYYY-MM-DD", "en-us") */;
-    this.messageList.unshift(area.value);
+    let _time: string = Date.now().toString()/* formatDate(Date.now(), "YYYY-MM-DD", "en-us") */;
+    this.messageList.unshift({
+      msg: area.value,
+      timestamp: _time
+    });
     area.value = '';
   }
   getMsgInput(): HTMLTextAreaElement {

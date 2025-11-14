@@ -25,7 +25,8 @@
       width: 100%;
     }
     .submit-button {
-      margin: 8px
+      margin: 8px;
+      background-color: lightcoral;
     }
     #message-box {
       display: flex;
@@ -43,6 +44,10 @@
       width: 100%;
       /* display: block; */
     }
+    .message .index {
+      display: inline;
+      color: aliceblue
+    }
   </style>
 </head>
 <body>
@@ -55,13 +60,18 @@
       <button class="submit-button" (click)="pushMessageAndClear(getMsgInput())">Send</button>
     </div>
   </div>
-  <div id="message-box">
-    @for(message of messageList; track $index) {
-      <div class="message">
-        <code>User: </code>
-        <code class="timestamp">{{timestamp}}</code>
-        <div><code>{{message}}</code></div>
-      </div>
-    }
-  </div>
+  @if(messageList.length > 0) {
+    <div id="message-box">
+      @for(message of messageList; track $index) {
+        <div class="message index">
+          <code>{{"0".padStart(4, "0")}}</code>
+        </div>
+        <div class="message">
+          <code>User: </code>
+          <code class="timestamp">{{message.timestamp}}</code>
+          <div><code>{{message.msg}}</code></div>
+        </div>
+      }
+    </div>
+  }
 </body>
