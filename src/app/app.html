@@ -1,8 +1,13 @@
-<section>
-  <input type="text" (keyup.enter)="submit(msg.value)" #msg>
-  <!-- <button type="submit">Send</button> -->
-</section>
-@for(message of messageList; track $index) {
-  <hr>
-  <code>{{message}}</code>
-}
+<head>
+  
+</head>
+  <body>
+  <section>
+    <input type="text" (keyup.enter)="submit(msg.value)" #msg>
+    <!-- <button type="submit">Send</button> -->
+  </section>
+  @for(message of messageList; track $index) {
+    <hr>
+    <code>{{message}}</code>
+  }
+</body>
