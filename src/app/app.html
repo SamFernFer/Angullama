@@ -19,8 +19,8 @@
   <p>Send your</p>
   <p>message.</p>
   <section>
-    <textarea (keyup.enter)="submit($event)"></textarea>
-    <!-- <button type="submit">Send</button> -->
+    <textarea id="msg-input" (keyup.enter)="submit($event)"></textarea>
+    <button (click)="pushMessageAndClear(getMsgInput())">Send</button>
   </section>
   @for(message of messageList; track $index) {
     <hr>

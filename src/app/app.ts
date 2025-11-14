@@ -14,7 +14,13 @@ export class App {
 
   submit(event: Event): void {
     const _target = <HTMLTextAreaElement>event.target;
-    this.messageList.push(_target.value);
-    _target.value = '';
+    this.pushMessageAndClear(_target);
+  }
+  pushMessageAndClear(area: HTMLTextAreaElement): void {
+    this.messageList.push(area.value);
+    area.value = '';
+  }
+  getMsgInput(): HTMLTextAreaElement {
+    return <HTMLTextAreaElement>document.getElementById("msg-input");
   }
 }
