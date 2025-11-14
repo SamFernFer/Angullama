@@ -19,7 +19,7 @@
   <p>Send your</p>
   <p>message.</p>
   <section>
-    <textarea (keyup.enter)="submit(msg.value)" #msg></textarea>
+    <textarea (keyup.enter)="submit($event)"></textarea>
     <!-- <button type="submit">Send</button> -->
   </section>
   @for(message of messageList; track $index) {
