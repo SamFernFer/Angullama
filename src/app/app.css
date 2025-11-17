@@ -5,6 +5,22 @@
     margin: 12px;
     margin-bottom: 8px;
 }
+h1 {
+    color: blue;
+}
+p {
+    color: red;
+}
+.message-input-parent {
+    margin-right: 8px;
+}
+.message-input {
+    width: 100%;
+}
+.submit-button {
+    margin: 8px;
+    background-color: lightcoral;
+}
 .message {
     background-color: lightcoral;
     border: 2px solid black;
@@ -13,19 +29,6 @@
     margin-top: 8px;
     margin-bottom: 8px;
     color: black;
-}
-h1 {
-    color: blue;
-}
-p {
-    color: red;
-}
-.msg-input {
-    width: 100%;
-}
-.submit-button {
-    margin: 8px;
-    background-color: lightcoral;
 }
 .message-area {
     display: flex;
@@ -52,14 +55,6 @@ p {
     border-left: 2px solid black;
 }
 .message-string {
-    /* padding-top: 8px;
-    margin-top: 8px; */
     border-top: 2px solid black;
     white-space: pre-line;
-}
-.user-box {
-    display: inline-block;
-}
-.timestamp-box {
-    display: inline-block;
 }
