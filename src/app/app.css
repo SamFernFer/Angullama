@@ -59,6 +59,7 @@ p {
     white-space: pre-line;
 }
 .message-button {
+    display: inline-block;
     cursor: pointer;
     background-color: transparent;
     border: none;

@@ -20,7 +20,23 @@ export class App {
   @ViewChild("msgInput")
   msgInput!: ElementRef<HTMLTextAreaElement>;
   timestamp: string = "ERROR";
-  messageList: ChatMessage[] = [];
+  messageList: ChatMessage[] = [
+    {
+      msg: "text",
+      timestamp: "2025-11-17T13:45",
+      id: 3
+    },
+    {
+      msg: "First line\nSecond line\nThird line",
+      timestamp: "2025-11-17T13:45",
+      id: 2
+    },
+    {
+      msg: "",
+      timestamp: "2025-11-17T13:45",
+      id: 1
+    }
+  ];
   protected readonly title = signal('Angullama');
 
   submit(): void {
