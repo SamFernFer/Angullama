@@ -34,7 +34,7 @@ export class App {
     this.messageList.unshift({
       msg: _area.value,
       timestamp: _time,
-      id: this.messageList.length
+      id: this.messageList.length + 1
     });
     _area.value = '';
   }
