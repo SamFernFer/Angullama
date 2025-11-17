@@ -58,3 +58,14 @@ p {
     border-top: 2px solid black;
     white-space: pre-line;
 }
+.message-button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px
+}
+.message-button:active {
+    background-color: grey
+}
