@@ -35,28 +35,26 @@ p {
     overflow: auto;
     border: 2px solid blue
 }
-.timestamp {
-    text-align: right;
-    margin-top: 0px;
-    margin-left: auto;
-    margin-right: 0px;
-}
-.message-box {
-    width: 100%;
-}
 .message-header {
     display: grid;
-    grid-template-columns: 5% 45% 50%
-}
-.message {
-    width: 89%;
-    color: black;
+    grid-template-columns: 5% 85% 10%
 }
 .message-index {
-    display: inline-block;
-    width: auto
+    border-right: 2px solid black;
+}
+.message-user {
+    margin-left: 8px;
+}
+.message-timestamp {
+    text-align: right;
+    padding-left: 8px;
+    margin-left: auto;
+    border-left: 2px solid black;
 }
 .message-string {
+    /* padding-top: 8px;
+    margin-top: 8px; */
+    border-top: 2px solid black;
     white-space: pre-line;
 }
 .user-box {

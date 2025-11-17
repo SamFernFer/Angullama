@@ -10,30 +10,23 @@
       <button class="submit-button" (click)="submit()">Send</button>
     </div>
   </div>
-  <!-- <div style="display: grid; grid-template-columns: 5% 45% 50%">
-    <div style="border: 2px solid blue; border-right: none"><code>898</code></div>
-    <div style="border: 2px solid blue; border-right: none"><code>User</code></div>
-    <div style="border: 2px solid blue; text-align: right"><code>2025-11-17T11:08</code></div>
-  </div>
-  <div style="border: 2px solid blue; border-top: none; margin-top: 0px">
-    <pre>Hello,
-      world.
-    </pre>
-  </div> -->
   @if(messageList.length > 0) {
     <div class="message-area">
       @for(message of messageList; track $index) {
-        <div class="message-box">
+        <div class="message">
           <div class="message-header">
-            <div class="message message-index">
+            <div class="message-index">
               <code>{{message.id}}</code>
-              <p></p>
             </div>
-            <div class="message message-body">
-              <div class="user-box"><code>User: </code></div>
-              <div><code class="timestamp-box">{{message.timestamp}}</code></div>
-              <div class="message-string"><code>{{message.msg}}</code></div>
+            <div class="message-user">
+              <code>User</code>
             </div>
+            <div class="message-timestamp">
+              <code>{{message.timestamp}}</code>
+            </div>
+          </div>
+          <div class="message-string">
+            <pre>{{message.msg}}</pre>
           </div>
         </div>
       }
