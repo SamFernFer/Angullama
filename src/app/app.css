@@ -44,14 +44,17 @@ p {
 .message-box {
     width: 100%;
 }
+.message-header {
+    display: grid;
+    grid-template-columns: 5% 45% 50%
+}
 .message {
-    display: inline-block;
     width: 89%;
     color: black;
 }
-.index {
+.message-index {
     display: inline-block;
-    width: 9%;
+    width: auto
 }
 .message-string {
     white-space: pre-line;
