@@ -1,70 +1,20 @@
 <head>
-  <style>
-    #header {
-      background-color: powderblue;
-      border: 2px solid black;
-      padding: 8px;
-      margin: 12px;
-      margin-bottom: 8px;
-    }
-    .message {
-      background-color: lightcoral;
-      border: 2px solid black;
-      padding: 8px;
-      margin: 12px;
-      margin-top: 8px;
-      margin-bottom: 8px;
-    }
-    h1 {
-      color: blue;
-    }
-    p {
-      color: red;
-    }
-    #msg-input {
-      width: 100%;
-    }
-    .submit-button {
-      margin: 8px;
-      background-color: lightcoral;
-    }
-    #message-box {
-      display: flex;
-      flex-flow: column;
-      height: 100%;
-      flex: 0 0 0;
-      overflow: auto;
-      border: 2px solid blue
-    }
-    .timestamp {
-      text-align: right;
-      margin-top: 0px;
-      margin-left: auto;
-      margin-right: 0px;
-      width: 100%;
-      /* display: block; */
-    }
-    .message .index {
-      display: inline;
-      color: aliceblue
-    }
-  </style>
 </head>
 <body>
-  <div id="header">
+  <div class="header">
     <h1>Angullama</h1>
     <p>Send your</p>
     <p>message.</p>
     <div>
-      <textarea id="msg-input" rows="4" (keyup.enter)="submit($event)"></textarea>
-      <button class="submit-button" (click)="pushMessageAndClear(getMsgInput())">Send</button>
+      <textarea class="msg-input" #msgInput rows="4" (keyup.enter)="submit($event)"></textarea>
+      <button class="submit-button" (click)="pushMessageAndClear()">Send</button>
     </div>
   </div>
   @if(messageList.length > 0) {
-    <div id="message-box">
-      @for(message of messageList; track message.id) {
+    <div class="message-box">
+      @for(message of messageList; track $index) {
         <div class="message index">
-          <code>{{(message.id as string).padStart(4, "0")}}</code>
+          <code>{{message.id}}</code>
         </div>
         <div class="message">
           <code>User: </code>

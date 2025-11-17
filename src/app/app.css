@@ -1,0 +1,48 @@
+.header {
+    background-color: powderblue;
+    border: 2px solid black;
+    padding: 8px;
+    margin: 12px;
+    margin-bottom: 8px;
+}
+.message {
+    background-color: lightcoral;
+    border: 2px solid black;
+    padding: 8px;
+    margin: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+h1 {
+    color: blue;
+}
+p {
+    color: red;
+}
+.msg-input {
+    width: 100%;
+}
+.submit-button {
+    margin: 8px;
+    background-color: lightcoral;
+}
+.message-box {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    flex: 0 0 0;
+    overflow: auto;
+    border: 2px solid blue
+}
+.timestamp {
+    text-align: right;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: 0px;
+    width: 100%;
+    /* display: block; */
+}
+.message .index {
+    display: inline-block;
+    color: aliceblue;
+}
