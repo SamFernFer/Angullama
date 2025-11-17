@@ -12,6 +12,7 @@
     margin: 12px;
     margin-top: 8px;
     margin-bottom: 8px;
+    color: black;
 }
 h1 {
     color: blue;
@@ -26,7 +27,7 @@ p {
     margin: 8px;
     background-color: lightcoral;
 }
-.message-box {
+.message-area {
     display: flex;
     flex-flow: column;
     height: 100%;
@@ -39,10 +40,25 @@ p {
     margin-top: 0px;
     margin-left: auto;
     margin-right: 0px;
-    width: 100%;
-    /* display: block; */
 }
-.message .index {
+.message-box {
+    width: 100%;
+}
+.message {
     display: inline-block;
-    color: aliceblue;
+    width: 90%;
+    color: black;
+}
+.index {
+    display: inline-block;
+    width: 10%;
+}
+.message-string {
+    white-space: pre-line;
+}
+.user-box {
+    display: inline-block;
+}
+.timestamp-box {
+    display: inline-block;
 }

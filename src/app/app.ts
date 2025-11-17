@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { formatDate } from '@angular/common';
 
+// Interface used for each chat message.
 interface ChatMessage {
   msg: string,
   timestamp: string,
@@ -22,8 +23,9 @@ export class App {
   messageList: ChatMessage[] = [];
   protected readonly title = signal('Angullama');
 
-  submit(event: Event): void {
-    const _target = <HTMLTextAreaElement>event.target;
+  submit(): void {
+    // Not using the event object anymore.
+    /* const _target = <HTMLTextAreaElement>event.target; */
     this.pushMessageAndClear();
   }
   pushMessageAndClear(): void {

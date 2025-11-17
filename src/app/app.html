@@ -6,22 +6,25 @@
     <p>Send your</p>
     <p>message.</p>
     <div>
-      <textarea class="msg-input" #msgInput rows="4" (keyup.enter)="submit($event)"></textarea>
-      <button class="submit-button" (click)="pushMessageAndClear()">Send</button>
+      <textarea class="msg-input" #msgInput rows="4" (keyup.enter)="submit()"></textarea>
+      <button class="submit-button" (click)="submit()">Send</button>
     </div>
-  </div>
-  @if(messageList.length > 0) {
+  <!-- @if(messageList.length > 0) {
     <div class="message-box">
-      @for(message of messageList; track $index) {
-        <div class="message index">
-          <code>{{message.id}}</code>
-        </div>
-        <div class="message">
-          <code>User: </code>
-          <code class="timestamp">{{message.timestamp}}</code>
-          <div><code>{{message.msg}}</code></div>
-        </div>
-      }
+      
+    </div>
+  } -->
+  @for(message of messageList; track $index) {
+    <div class="message-box">
+      <div class="message index">
+        <code>{{message.id}}</code>
+        <p></p>
+      </div>
+      <div class="message">
+        <div class="user-box"><code>User: </code></div>
+        <div><code class="timestamp-box">{{message.timestamp}}</code></div>
+        <div class="message-string"><code>{{message.msg}}</code></div>
+      </div>
     </div>
   }
 </body>
