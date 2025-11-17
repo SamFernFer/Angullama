@@ -40,8 +40,11 @@ export class App {
   protected readonly title = signal('Angullama');
 
   submit(): void {
-    // Not using the event object anymore.
-    /* const _target = <HTMLTextAreaElement>event.target; */
+    this.pushMessageAndClear();
+  }
+  submitTextArea(e: Event): void {
+    /* const _target = <HTMLTextAreaElement>e.target; */
+    e.preventDefault();
     this.pushMessageAndClear();
   }
   pushMessageAndClear(): void {

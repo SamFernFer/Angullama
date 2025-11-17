@@ -7,7 +7,7 @@
     <p>message.</p>
     <div>
       <div class="message-input-parent">
-        <textarea class="message-input" #msgInput rows="4" (keydown.enter)="submit($event)" placeholder="Type in your message."></textarea>
+        <textarea class="message-input" #msgInput rows="4" (keydown.enter)="submitTextArea($event)" placeholder="Type in your message."></textarea>
       </div>
       <button class="submit-button" (click)="submit()">Send</button>
     </div>
