@@ -61,11 +61,11 @@ p {
 .message-button {
     display: inline-block;
     cursor: pointer;
-    background-color: transparent;
+    background-color: #22222244;
     border: none;
     width: 32px;
     height: 32px;
-    margin-right: 8px
+    margin-bottom: 8px
 }
 .message-button:active {
     background-color: grey
