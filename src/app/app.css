@@ -46,12 +46,12 @@ p {
 }
 .message {
     display: inline-block;
-    width: 90%;
+    width: 89%;
     color: black;
 }
 .index {
     display: inline-block;
-    width: 10%;
+    width: 9%;
 }
 .message-string {
     white-space: pre-line;
