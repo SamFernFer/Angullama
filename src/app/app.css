@@ -28,6 +28,7 @@ p {
     margin: 12px;
     margin-top: 8px;
     margin-bottom: 8px;
+    padding-bottom: 0;
     color: black;
 }
 .message-area {
@@ -65,7 +66,10 @@ p {
     border: none;
     width: 32px;
     height: 32px;
-    margin-bottom: 8px
+}
+.message-button-area {
+    display: grid;
+    grid-template-columns: 48px 48px
 }
 .message-button:active {
     background-color: grey

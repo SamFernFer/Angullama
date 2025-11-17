@@ -7,7 +7,7 @@
     <p>message.</p>
     <div>
       <div class="message-input-parent">
-        <textarea class="message-input" #msgInput rows="4" (keyup.enter)="submit()"></textarea>
+        <textarea class="message-input" #msgInput rows="4" (keydown.enter)="submit($event)" placeholder="Type in your message."></textarea>
       </div>
       <button class="submit-button" (click)="submit()">Send</button>
     </div>
@@ -30,7 +30,7 @@
           <div class="message-string">
             <pre>{{message.msg}}</pre>
           </div>
-          <div style="display: grid; grid-template-columns: 48px 48px">
+          <div class="message-button-area">
             <div>
               <button class="message-button">
                 <img src="pencil.svg">

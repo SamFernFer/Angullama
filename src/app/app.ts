@@ -46,12 +46,15 @@ export class App {
   }
   pushMessageAndClear(): void {
     const _area = this.msgInput.nativeElement;
+    if (_area.value == "") {
+      return;
+    }
     let _time: string = Date.now().toString()/* formatDate(Date.now(), "YYYY-MM-DD", "en-us") */;
     this.messageList.unshift({
       msg: _area.value,
       timestamp: _time,
       id: this.messageList.length + 1
     });
-    _area.value = '';
+    _area.value = "";
   }
 }
