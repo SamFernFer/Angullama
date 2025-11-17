@@ -54,7 +54,4 @@ export class App {
     });
     _area.value = '';
   }
-  /* getMsgInput(): HTMLTextAreaElement {
-    return <HTMLTextAreaElement>document.getElementById("msg-input");
-  } */
 }
