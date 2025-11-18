@@ -1,6 +1,6 @@
 import { Component, ElementRef, signal, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { formatDate } from '@angular/common';
 
 // Interface used for each chat message.
@@ -12,14 +12,13 @@ interface ChatMessage {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, FormsModule, ReactiveFormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   @ViewChild("msgInput")
   msgInput!: ElementRef<HTMLTextAreaElement>;
-  timestamp: string = "ERROR";
   messageList: ChatMessage[] = [
     {
       msg: "text",
@@ -38,6 +37,8 @@ export class App {
     }
   ];
   protected readonly title = signal('Angullama');
+
+  msgForm = new FormControl("");
 
   submit(): void {
     this.pushMessageAndClear();
