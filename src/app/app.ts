@@ -2,6 +2,7 @@ import { Component, ElementRef, signal, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { formatDate } from '@angular/common';
+import { Sidebar } from './sidebar/sidebar';
 
 // Interface used for each chat message.
 interface ChatMessage {
@@ -12,7 +13,7 @@ interface ChatMessage {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, ReactiveFormsModule],
+  imports: [RouterOutlet, FormsModule, ReactiveFormsModule, Sidebar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
