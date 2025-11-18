@@ -7,7 +7,7 @@
     <p>message.</p>
     <div>
       <div class="message-input-parent">
-        <input class="message-input" #msgInput rows="4" [formControl] = "msgForm" placeholder="Type in your message."><!-- </input> -->
+        <textarea class="message-input" #msgInput rows="4" [formControl]="msgControl" (keydown.enter)="submitTextArea($event)" placeholder="Type in your message."></textarea>
       </div>
       <button class="submit-button" (click)="submit()">Send</button>
     </div>

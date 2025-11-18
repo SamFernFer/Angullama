@@ -38,7 +38,7 @@ export class App {
   ];
   protected readonly title = signal('Angullama');
 
-  msgForm = new FormControl("");
+  msgControl = new FormControl("");
 
   submit(): void {
     this.pushMessageAndClear();
@@ -49,13 +49,25 @@ export class App {
     this.pushMessageAndClear();
   }
   pushMessageAndClear(): void {
-    const _area = this.msgInput.nativeElement;
+    /* const _area = this.msgInput.nativeElement;
     if (_area.value == "") {
+      return;
+    } */
+
+      function f(): unknown {
+        return 9;
+      }
+
+    let _str: string = "";
+    _str = (() => { let v: number | string = <number | string>(f()); return v; })() as string;
+
+
+    if (this.msgControl.value == "") {
       return;
     }
     let _time: string = Date.now().toString()/* formatDate(Date.now(), "YYYY-MM-DD", "en-us") */;
     this.messageList.unshift({
-      msg: _area.value,
+      msg: this.msgControl.value as string,
       timestamp: _time,
       id: this.messageList.length + 1
     });
