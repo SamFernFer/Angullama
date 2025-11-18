@@ -17,8 +17,8 @@ interface ChatMessage {
   styleUrl: './app.css'
 })
 export class App {
-  @ViewChild("msgInput")
-  msgInput!: ElementRef<HTMLTextAreaElement>;
+  /* @ViewChild("msgInput")
+  msgInput!: ElementRef<HTMLTextAreaElement>; */
   messageList: ChatMessage[] = [
     {
       msg: "text",
