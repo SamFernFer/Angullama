@@ -1,8 +1,7 @@
 import { Component, ElementRef, signal, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { formatDate } from '@angular/common';
-import { Sidebar } from './sidebar/sidebar';
+import { formatDate, NgClass } from '@angular/common';
 
 // Interface used for each chat message.
 interface ChatMessage {
@@ -10,10 +9,13 @@ interface ChatMessage {
   timestamp: string,
   id: number
 }
+interface SettingsSection {
+  isOpen: boolean
+}
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, ReactiveFormsModule, Sidebar],
+  imports: [RouterOutlet, FormsModule, ReactiveFormsModule, NgClass],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -39,6 +41,10 @@ export class App {
   ];
   protected readonly title = signal('Angullama');
 
+  generalSection: SettingsSection = {
+    isOpen: false
+  };
+
   msgControl = new FormControl("");
 
   submit(): void {
@@ -60,5 +66,8 @@ export class App {
       id: this.messageList.length + 1
     });
     this.msgControl.setValue("");
+  }
+  toggleSection(section: SettingsSection) {
+    section.isOpen = !section.isOpen;
   }
 }

@@ -14,6 +14,14 @@ h1 {
 p {
     color: red;
 }
+.arrow-rotated {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    transform: rotate(90deg) translateY(25%) translateX(12.5%)
+}
+.general-section label {
+    border: 2px solid grey
+}
 .message-input-parent {
     margin-right: 8px;
 }

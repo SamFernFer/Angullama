@@ -1,12 +1,27 @@
 <head>
 </head>
 <body>
-  <app-sidebar></app-sidebar>
-  @if(sidebar.isOpen) {
-    
-  }
   <div class="header">
     <h1>Angullama</h1>
+    <div>
+      <button (click)="toggleSection(generalSection)" style="width: 32px; height: 32px; margin-right: 16px">
+        <img [ngClass]="{ 'arrow-rotated': generalSection.isOpen }" src="arrow.svg">
+      </button>
+      <div style="display: inline-block">
+        <h2>General</h2>
+      </div>
+    </div>
+    @if(generalSection.isOpen) {
+      <div class="general-section" style="display: grid; grid-template-columns: 20% 80%">
+        <label>Server Address</label><input>
+        <label>System Message</label><textarea></textarea>
+        <label>Temperature</label><input>
+        <label>Top K</label><input>
+        <label>Top P</label><input>
+        <label>Min P</label><input>
+        <label>Max Tokens</label><input>
+      </div>
+    }
     <p>Send your</p>
     <p>message.</p>
     <div>
