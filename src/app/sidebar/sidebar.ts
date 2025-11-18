@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
-
+  isOpen: boolean = false;
+  
 }
