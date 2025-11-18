@@ -44,6 +44,9 @@ export class App {
   generalSection: SettingsSection = {
     isOpen: false
   };
+  samplersSection: SettingsSection = {
+    isOpen: false
+  };
 
   msgControl = new FormControl("");
 
